@@ -1,0 +1,2 @@
+var nombre="Alfonso";
+      console.log(nombre);
