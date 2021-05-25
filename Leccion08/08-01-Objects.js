@@ -5,17 +5,27 @@ let persona={
     apellido:"Porto",
     email:"portbuj@yahoo.es",
     telefono:620771628,
-    nombreCompleto: function(){
+    idioma:"es",
+    get lang(){
+        return this.idioma.toUpperCase();
+    },
+    set lang( lang ){
+        this.idioma=lang.toUpperCase();
+    },
+    get nombreCompleto(){
         return this.nombre+" "+this.apellido;
-    }
+    },
+   
 }
 
 console.log(persona.nombre);
 console.log(persona.apellido);
 console.log(persona.email);
 console.log(persona.telefono);
-console.log(persona.nombreCompleto());
+console.log(persona.nombreCompleto);
 
+persona.lang="en";
+console.log(persona.lang);
 
 console.log(persona);
 
@@ -50,3 +60,20 @@ console.log(persona);
 
 delete persona.direccion;
 console.log(persona);
+
+
+//Distintas formas de imprimir objetos
+
+    console.log(persona);
+
+    console.log(persona.nombre+" , "+persona.apellido+" ,"+persona.email);
+
+    for(nombrePropiedad in persona){
+        console.log(persona[nombrePropiedad]);
+    }
+
+    let personaArray=Object.values(persona);
+    console.log(personaArray);
+
+    let personaString=JSON.stringify(persona);
+    console.log(personaString);
