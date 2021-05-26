@@ -77,3 +77,47 @@ console.log(persona);
 
     let personaString=JSON.stringify(persona);
     console.log(personaString);
+
+    //Constructor de objetos de tipo persona
+
+    function Persona(nombre, apellido, email){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.email=email;
+
+        this.nombreCompleto = function(){
+            return this.nombre+ " "+this.apellido;
+        }
+    } 
+
+    let padre=new Persona("Paco", "Buyo", "pbuyo@hotmail.com");
+
+    let madre=new Persona("Belen", "Perez", "bperez@hotmail.com");
+
+    madre.nombre="Isabel";
+
+    console.log(madre);
+
+    madre.nombreCompleto;
+
+    console.log(madre.nombreCompleto());
+
+    //Distintas formas de declarar objetos
+
+    let miObjeto=new Object();
+    let miObjeto2={};
+
+    let miCadena1=new String("Hola");
+    let miCadena2="Hola";
+
+    let miNumero=new Number(1);
+    let miNumero2=1;
+
+    let miBoolean=new Boolean(true);
+    let miBoolean2=true;
+
+    let miArray=new Array();
+    let miArray2=[];
+
+    let miFuncion1=new Function();
+    let miFuncion2=function();
