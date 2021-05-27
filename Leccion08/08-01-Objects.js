@@ -80,7 +80,7 @@ console.log(persona);
 
     //Constructor de objetos de tipo persona
 
-    function Persona(nombre, apellido, email){
+    function Persona(nombre, apellido, email, telefono){
         this.nombre=nombre;
         this.apellido=apellido;
         this.email=email;
@@ -90,18 +90,30 @@ console.log(persona);
         }
     } 
 
-    let padre=new Persona("Paco", "Buyo", "pbuyo@hotmail.com");
+    let padre=new Persona("Paco", "Buyo", "pbuyo@hotmail.com", "123456");
 
-    let madre=new Persona("Belen", "Perez", "bperez@hotmail.com");
+    let madre=new Persona("Belen", "Perez", "bperez@hotmail.com", "987654");
 
     madre.nombre="Isabel";
 
+    console.log(padre);
     console.log(madre);
 
     madre.nombreCompleto;
 
     console.log(madre.nombreCompleto());
 
+    console.log(padre);
+    console.log(madre);
+
+    Persona.prototype.telefono="444444444";
+
+    console.log(padre.telefono);
+    console.log(madre.telefono);
+
+    console.log(padre);
+    console.log(madre);
+    
     //Distintas formas de declarar objetos
 
     let miObjeto=new Object();
@@ -119,5 +131,3 @@ console.log(persona);
     let miArray=new Array();
     let miArray2=[];
 
-    let miFuncion1=new Function();
-    let miFuncion2=function();
