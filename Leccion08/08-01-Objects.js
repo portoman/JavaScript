@@ -134,8 +134,8 @@ let miArray2 = [];
 let persona3 = {
   nombre: "Juan",
   apellido: "Perez",
-  nombreCompeto: function () {
-    return this.nombre + " " + this.apellido;
+  nombreCompeto: function (titulo, telefono) {
+    return titulo+ ": "+ this.nombre + " " + this.apellido+", "+telefono;
   },
 };
 
@@ -146,6 +146,12 @@ let persona4={
 
 //Uso de call para usar el metodo persona1.nombreCompleto con los datos del persona2
 
-console.log(persona3.nombreCompeto());
+console.log(persona3.nombreCompeto("Doctor", "87989988"));
 
-console.log(persona3.nombreCompeto.call(persona4));
+console.log(persona3.nombreCompeto.call(persona4, "Ingeniero", "987456812"));
+
+//Apply: Funciona similar a call, pero si la función tiene argumentos hay que meterlos en forma de Array
+
+let array=["Ing", "8798799"];
+
+console.log(persona3.nombreCompeto.apply(persona4, array));
