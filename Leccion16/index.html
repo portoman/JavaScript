@@ -3,30 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <title>Ejemplo DOM con Javascript</title>
+    <style>
+      .azul{
+        color: blue;
+      }
+    </style>
   </head>
   <body>
-    <h1 id='cabecero'>Ejemplo DOM con JavaScript</h1>
-    <p id='parrafo'>Saludos!</p>
-    
+    <h1 id="cabecero">Ejemplo DOM con JavaScript</h1>
+    <p class="azul" id="parrafo">Saludos desde el primer párrafo!</p>
+    <p id="parrafo2">Segundo párrafo</p>
+    <p class="azul" id="parrafo3">Tercer párrafo</p>
+
     <script>
-      let cabecero=document.getElementById('cabecero').innerHTML;
-      console.log('valor cabecero: '+ cabecero);
+      let cabecero = document.getElementById("cabecero").innerHTML;
+      console.log("valor cabecero: " + cabecero);
 
-      let cabecero2=document.getElementById('cabecero');
-      console.log('valor cabecero2: '+ cabecero2);
+      let cabecero2 = document.getElementById("cabecero");
+      console.log("valor cabecero2: " + cabecero2);
 
-      let cabecero3=document.getElementById('cabecero');
-      console.log(`valor cabecero3: ${cabecero.innerHTML}`);
+      let cabecero3 = document.getElementById("cabecero");
+      console.log("valor cabecero3:" + cabecero3.innerHTML);
 
-        console.log('saludos desde JavaScript');
-        let parrafo=document.getElementById('parrafo').innerHTML;
-      console.log('valor parrafo: '+ parrafo);
+      console.log("saludos desde JavaScript");
+      let parrafo = document.getElementById("parrafo").innerHTML;
+      console.log("valor parrafo: " + parrafo);
 
-      parrafo.innerHTML='Nuevo valor de párrafo';
+      //parrafo.innerHTML = "Nuevo valor de párrafo";
+      //cabecero.innerHTML = "Nuevo Cabecero";
 
-      var nombre="Alfonso";
+      var nombre = "Alfonso";
       console.log(nombre);
+
+      //Método getElementByTagName
+
+      let parrafos=document.getElementsByTagName('p');
+      console.log(`Nº de párrafos: ${parrafos.length}`);
+      for(let i=0;i<parrafos.length;i++){
+        console.log(`Índice: ${i} - ${parrafos[i].innerHTML}`);
+      }
+
+       //Método getElementByClassName
+      let elementos=document.getElementsByClassName('azul');
+      console.log(`Nº de elementos en azul: ${elementos.length}`);
+      for(let i=0;i<elementos.length;i++){
+        console.log(`Índice: ${i} - ${elementos[i].innerHTML}`);
+      }
     </script>
-  
-</body>
+  </body>
 </html>
