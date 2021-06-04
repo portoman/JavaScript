@@ -49,6 +49,13 @@
       for(let i=0;i<elementos.length;i++){
         console.log(`Índice: ${i} - ${elementos[i].innerHTML}`);
       }
+
+      //Método querySelectorAll
+      let elementos2=document.querySelectorAll('p.azul');//Párrafos que tengan azul
+      console.log(`Nº de elementos en azul: ${elementos2.length}`);
+      for(let i=0;i<elementos2.length;i++){
+        console.log(`Índice: ${i} - ${elementos2[i].innerHTML}`);
+      }
     </script>
   </body>
 </html>
