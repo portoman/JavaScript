@@ -53,3 +53,14 @@ Operadores relacionales:
     }else{
         console.log("No estamos en la década 2020");
     }
+
+    //OR
+
+    if(year==2008 || year==2018){
+        console.log("El año acaba en 8");
+    }else{
+        console.log("El año NO acaba en 8");
+    }
+
+    
+
