@@ -30,6 +30,8 @@ console.log(parseFloat(numero_falso)+4);//Función ParseFloat para convertir un 
 
 console.log(String(numero_entero)+4);//Función String para convertir un dato en String
 
+numero_entero.toString;//Método .toString tb convierte el dato en String
+
 //Typeof-> Para saber el tipo de dato
 
 console.log(typeof numero_entero);
