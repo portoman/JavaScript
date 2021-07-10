@@ -16,6 +16,23 @@ window.addEventListener("load", () => {
 
     console.log(nombre, apellido, edad);
 
+    //Validación de valores introducidos
+    if(nombre.trim() == null || nombre.trim().length==0){
+      alert("El nombre no es válido");
+      document.querySelector("#error_nombre").innerHTML="El nombre no es válido";
+      return false;
+    }
+    if(apellido.trim() == null || apellido.trim().length==0){
+      alert("El apellido no es válido");
+      document.querySelector("#error_apellido").innerHTML="Los apellidos no son válidos";
+      return false;
+    }
+    if(edad.trim() == null || edad.trim().length==0|| isNaN(edad)){
+      alert("La edad no es válida");
+      document.querySelector("#error_edad").innerHTML="La edad no es válida";
+      return false;
+    }
+
     box_dashed.style.display = "block";
 
     /*//Una manera de hacerlo

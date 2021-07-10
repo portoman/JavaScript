@@ -22,22 +22,21 @@
       1. Formulario con los campos: Nombre, apellidos, edad
       2. Botón de enviar el formulario: Evento submit
       3. Mostrar datos por pantalla
-      4. Tener un botón que al darle click nos muestra los datos actuales del formulario
     -->
     <h1>Ejercicio DOM, Eventos y Funciones</h1>
     <div class="box">
       <form action="#" method="POST" id="formulario" onsubmit="return false;">
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre" />
-        <br />
+        <br /><span id="error_nombre"></span>
         <br />
         <label for="apellidos">Apellidos: </label>
         <input type="text" name="apellidos" id="apellidos" />
-        <br />
+        <br /><span id="error_apellido"></span>
         <br />
         <label for="edad">Edad: </label>
         <input type="text" name="edad" id="edad" />
-        <br />
+        <br /><span id="error_edad"></span>
         <br />
         <input type="submit" value="Enviar" id="submit" />
       </form>
