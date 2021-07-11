@@ -9,7 +9,7 @@ var caja = document.querySelector("#micaja");//Con querySelector
 
 console.log(caja);
 
-//Modificar contenido
+//Enviar contenido desde Js
 caja.innerHTML = "Texto en la caja desde Js";
 console.log(caja);
 

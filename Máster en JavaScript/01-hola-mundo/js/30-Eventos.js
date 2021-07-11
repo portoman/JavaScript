@@ -21,11 +21,13 @@ function cambiarColor() {
 
 var boton3 = document.querySelector("#boton3");
 
-//Buena práctica: Traer todo el código  a este archivo
+//Buena práctica: Traer todo el código a este archivo, escribiendo lo mínimo en el html
+//En Universidad Java pone directamente el código en html dentro de la etiqueta=>Ejemplo: onclick="sumar()"
 
 //Click
 boton3.addEventListener("click", function () {
   alert("hola has presionado el botón 3");
+  this.style.border="10px solid black";//This->Para referirse al objeto
 });
 
 //Doble-Click
