@@ -9,19 +9,13 @@
 
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!--Slider-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
-    />
 
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    
-    
-    <!--Moment: Para fechas-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es-mx.min.js"></script>
+    <link rel="stylesheet" href="/03-Proyecto-JS/js/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="/03-Proyecto-JS/js/jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/03-Proyecto-JS/js/jquery-ui-1.12.1/jquery-ui.theme.css">
 
+
+    <script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <!--Mis scripts-->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
@@ -48,24 +42,44 @@
             <li><a href="#" class="navegadores">CALCULADORA</a></li>
             <li><a href="#" class="navegadores">RELOJ</a></li>
             <li><a href="about.html" class="navegadores">SOBRE MI</a></li>
-            <li><a href="#"class="navegadores">CONTACTO</a></li>
+            <li><a href="#" class="navegadores">CONTACTO</a></li>
           </ul>
         </nav>
       </header>
-      <!--Slider-->
-      <div id="slider">
-        <div class="bxslider">
-          <div><img src="img/hojas.jpg" title="Funky roots" /></div>
-          <div>
-            <img src="img/rojo.jpg" title="The long and winding road" />
-          </div>
-          <div><img src="img/cielo.jpg" title="Happy trees" /></div>
-        </div>
-      </div>
       <!--Artículos-->
       <div id="content">
-        <div id="posts">
-          <!--Cargar posts desde Json en main.js-->
+        <div id="box">
+          <!--Cargar acordeón-->
+          <h2>Sobre mi</h2>
+          <div id="acordeon">
+            <h3>¿Quienes somos?</h3>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+            eleifend purus purus, in facilisis massa scelerisque ut. Ut non
+            placerat mauris. Ut in ligula massa. Morbi a diam viverra nisl
+            luctus blandit id vitae libero.
+              </p>
+            </div>
+              <h3>Nuestros servicios</h3>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              eleifend purus purus, in facilisis massa scelerisque ut. Ut non
+              placerat mauris. Ut in ligula massa. Morbi a diam viverra nisl
+              luctus blandit id vitae libero.
+                </p>
+              </div>
+              <h3>Localización</h3>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              eleifend purus purus, in facilisis massa scelerisque ut. Ut non
+              placerat mauris. Ut in ligula massa. Morbi a diam viverra nisl
+              luctus blandit id vitae libero.
+                </p>
+              </div>
+          </div>
         </div>
         <aside id="sidebar">
           <h4 id="tituloAside"><span>¿Quién soy?</span></h4>
