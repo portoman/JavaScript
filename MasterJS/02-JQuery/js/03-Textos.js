@@ -26,7 +26,7 @@ function reloadLinks(){
         var that=$(this);
         var enlace=that.attr("href");
 
-        that.attr("target","_blank");//Añadir atributos
+        that.attr("target","_blank");//Añadir atributos o modificarlos
         that.removeAttr()
         that.text(enlace);
         console.log(that);

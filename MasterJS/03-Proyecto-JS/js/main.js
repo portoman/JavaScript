@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  if (window.location.href.indexOf("index") > -1) {//Solo para la página index
+  if (window.location.href.indexOf("index") > -1) {
+    //Solo para la página index
     //Slider
     $(".bxslider").bxSlider({
       mode: "fade",
@@ -10,11 +11,12 @@ $(document).ready(function () {
   }
   //Post
 
-  if (window.location.href.indexOf("index") > -1) {//Solo para la página index
+  if (window.location.href.indexOf("index") > -1) {
+    //Solo para la página index
 
     var posts = [
       {
-        title: "Prueba de título 1",
+        title: "Título 1",
         date:
           "Publicado el día " +
           moment().date() +
@@ -26,7 +28,7 @@ $(document).ready(function () {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend purus purus, in facilisis massa scelerisque ut. Ut non     placerat mauris. Ut in ligula massa. Morbi a diam viverra nisl luctus     blandit id vitae libero. Orci varius natoque penatibus et magnis",
       },
       {
-        title: "Prueba de título 2",
+        title: "Título 2",
         date:
           "Publicado el día " +
           moment().date() +
@@ -38,7 +40,7 @@ $(document).ready(function () {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend purus purus, in facilisis massa scelerisque ut. Ut non     placerat mauris. Ut in ligula massa. Morbi a diam viverra nisl luctus     blandit id vitae libero. Orci varius natoque penatibus et magnis",
       },
       {
-        title: "Prueba de título 3",
+        title: "Título 3",
         date:
           "Publicado el día " +
           moment().date() +
@@ -50,7 +52,7 @@ $(document).ready(function () {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend purus purus, in facilisis massa scelerisque ut. Ut non     placerat mauris. Ut in ligula massa. Morbi a diam viverra nisl luctus     blandit id vitae libero. Orci varius natoque penatibus et magnis",
       },
       {
-        title: "Prueba de título 4",
+        title: "Título 4",
         date:
           "Publicado el día " +
           moment().date() +
@@ -62,7 +64,7 @@ $(document).ready(function () {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend purus purus, in facilisis massa scelerisque ut. Ut non     placerat mauris. Ut in ligula massa. Morbi a diam viverra nisl luctus     blandit id vitae libero. Orci varius natoque penatibus et magnis",
       },
       {
-        title: "Prueba de título 5",
+        title: "Título 5",
         date:
           "Publicado el día " +
           moment().date() +
@@ -145,10 +147,28 @@ $(document).ready(function () {
     location.reload();
   });
 
+  //Acordeón
   if (window.location.href.indexOf("about") > -1) {
-   
     $("#acordeon").accordion();
   }
-}); 
 
+  //Reloj
+  if (window.location.href.indexOf("reloj") > -1) {
+    setInterval(function () {
+      var reloj = moment().format("hh:mm:ss");
+      $("#reloj").text(reloj);
+    }, 1000);
+  }
 
+  //Validación de formulario
+  if (window.location.href.indexOf("contact") > -1) {
+    $("form input[name='date']").datepicker({
+      dateFormat: "dd-mm-yy",
+    });
+    $.validate({
+      lang: "es",
+      errorMessagePosition: "top",
+      scrollToTopOnError: true,
+    });
+  }
+});
