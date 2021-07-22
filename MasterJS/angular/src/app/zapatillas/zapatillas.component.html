@@ -1,0 +1,26 @@
+<h2>{{ titulo }}</h2>
+<p>¡Compra las zapatillas de las mejores marcas!</p>
+<ul>
+  <li *ngFor="let marca of marcas">{{ marca }}</li>
+</ul>
+<hr />
+<p>Los tenis que están actualmente disponibles son:</p>
+<ul>
+  <!--Directiva ngFor para recorrer el array-->
+  <li *ngFor="let tenis of zapatillas">
+    <!--Cambiar estilo cuando no hay stock-->
+    <span
+      [ngStyle]="{
+        'text-decoration': !tenis.stock ? 'line-through' : 'none'
+      }"
+      >{{ tenis.nombre }} - <strong>{{ tenis.precio }} € </strong></span
+    >
+    <!--Directiva ngIf-->
+    <span
+      *ngIf="tenis.precio <= 80"
+      [ngStyle]="{ color: 'orange' }"
+      [style.background]="tenis.precio <= 80 ? 'blue' : 'transparent'"
+      >¡EN OFERTA!</span
+    >
+  </li>
+</ul>
