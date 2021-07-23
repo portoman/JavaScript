@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Zapatilla } from '../models/zapatilla';
 
@@ -9,8 +10,12 @@ export class ZapatillasComponent implements OnInit {
   public titulo: string = 'Componente de zapatillas';
   public zapatillas: Array<Zapatilla>;
   public marcas: String[];
+  public color: string;
+  public mi_marca: string;
 
   constructor() {
+    this.mi_marca="";
+    this.color='yellow';
     this.marcas = new Array();
     this.zapatillas = [
       new Zapatilla('Reebook Classic', 'Reebook', 'Blanco', 80, true),

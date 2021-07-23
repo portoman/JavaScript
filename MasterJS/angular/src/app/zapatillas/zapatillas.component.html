@@ -1,7 +1,9 @@
 <h2>{{ titulo }}</h2>
 <p>¡Compra las zapatillas de las mejores marcas!</p>
 <ul>
-  <li *ngFor="let marca of marcas">{{ marca }}</li>
+  <li *ngFor="let marca of marcas; let indice = index">
+    {{ indice + " " + marca }}
+  </li>
 </ul>
 <hr />
 <p>Los tenis que están actualmente disponibles son:</p>
@@ -24,3 +26,31 @@
     >
   </li>
 </ul>
+
+<!--Directiva ngSwitch-->
+<p>El color de nuestra tienda es:</p>
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'yellow'">
+    El 
+    <span [ngStyle]="{ background: color }">amarillo</span>
+  </li>
+  <li *ngSwitchCase="'red'">
+    El 
+    <span [ngStyle]="{ background: color }">rojo</span> 
+  </li>
+  <li *ngSwitchCase="'blue'">
+    El 
+    <span [ngStyle]="{ background: color }">azul</span> 
+  </li>
+  <li *ngSwitchCase="'orange'">
+    El 
+    <span [ngStyle]="{ background: color }">naranja</span> 
+  </li>
+</ul>
+
+<!--2 way data-binding-->
+<p>Añadir marca</p>
+<p>
+<input type="text" [(ngModel)]="mi_marca"/>
+</p>
+<p>{{mi_marca}}</p>
