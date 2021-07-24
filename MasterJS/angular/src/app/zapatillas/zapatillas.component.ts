@@ -14,7 +14,7 @@ export class ZapatillasComponent implements OnInit {
   public mi_marca: string;
 
   constructor() {
-    this.mi_marca="";
+    this.mi_marca="Kappa";
     this.color='yellow';
     this.marcas = new Array();
     this.zapatillas = [
@@ -39,5 +39,24 @@ export class ZapatillasComponent implements OnInit {
       console.log(index);
     });
     console.log(this.marcas);
+  }
+  getMarca(){
+    alert(this.mi_marca);
+  }
+
+  addMarca(){
+    this.marcas.push(this.mi_marca);
+  }
+
+  borrarMarca(indice: number){
+     this.marcas.splice(indice,1);
+  }
+
+  onBlur(){
+    console.log("Has salido del input");
+  }
+
+  mostrarPalabra(){
+    alert(this.mi_marca);
   }
 }
