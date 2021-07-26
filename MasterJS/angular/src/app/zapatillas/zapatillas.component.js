@@ -12,7 +12,7 @@ var zapatilla_1 = require("../models/zapatilla");
 var ZapatillasComponent = /** @class */ (function () {
     function ZapatillasComponent() {
         this.titulo = 'Componente de zapatillas';
-        this.mi_marca = "";
+        this.mi_marca = "Kappa";
         this.color = 'yellow';
         this.marcas = new Array();
         this.zapatillas = [
@@ -37,6 +37,21 @@ var ZapatillasComponent = /** @class */ (function () {
             console.log(index);
         });
         console.log(this.marcas);
+    };
+    ZapatillasComponent.prototype.getMarca = function () {
+        alert(this.mi_marca);
+    };
+    ZapatillasComponent.prototype.addMarca = function () {
+        this.marcas.push(this.mi_marca);
+    };
+    ZapatillasComponent.prototype.borrarMarca = function (indice) {
+        this.marcas.splice(indice, 1);
+    };
+    ZapatillasComponent.prototype.onBlur = function () {
+        console.log("Has salido del input");
+    };
+    ZapatillasComponent.prototype.mostrarPalabra = function () {
+        alert(this.mi_marca);
     };
     ZapatillasComponent = __decorate([
         core_1.Component({

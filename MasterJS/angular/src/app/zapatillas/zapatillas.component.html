@@ -16,7 +16,14 @@
       [ngStyle]="{
         'text-decoration': !tenis.stock ? 'line-through' : 'none'
       }"
-      >{{ tenis.nombre }} - <strong>{{ tenis.precio }} € </strong></span
+      >{{ tenis.nombre }} -<!--Clases-->
+      <strong
+        [class.altoPrecio]="tenis.precio >= 80"
+        [ngClass]="{
+          'fondoRojo': tenis.precio>100, 
+          'subrayado': tenis.marca=='Nike'}"
+        >{{ tenis.precio }} €
+      </strong></span
     >
     <!--Directiva ngIf-->
     <span
@@ -30,31 +37,36 @@
 
 <!--Directiva ngSwitch-->
 <p>El color de nuestra tienda es:</p>
-<input type="text" [(ngModel)]="color"/><!--2 way data-binding-->
+<input type="text" [(ngModel)]="color" /><!--2 way data-binding-->
 <ul [ngSwitch]="color">
   <li *ngSwitchCase="'yellow'">
-    El 
+    El
     <span [ngStyle]="{ background: color }">amarillo</span>
   </li>
   <li *ngSwitchCase="'red'">
-    El 
-    <span [ngStyle]="{ background: color }">rojo</span> 
+    El
+    <span [ngStyle]="{ background: color }">rojo</span>
   </li>
   <li *ngSwitchCase="'blue'">
-    El 
-    <span [ngStyle]="{ background: color }">azul</span> 
+    El
+    <span [ngStyle]="{ background: color }">azul</span>
   </li>
   <li *ngSwitchCase="'orange'">
-    El 
-    <span [ngStyle]="{ background: color }">naranja</span> 
+    El
+    <span [ngStyle]="{ background: color }">naranja</span>
   </li>
 </ul>
 
 <!--2 way data-binding-->
 <p>Añadir marca</p>
 <p>
-<input type="text" [(ngModel)]="mi_marca" (blur)="onBlur()" (keyup.enter)="mostrarPalabra()"/><!--2 eventos más-->
+  <input
+    type="text"
+    [(ngModel)]="mi_marca"
+    (blur)="onBlur()"
+    (keyup.enter)="mostrarPalabra()"
+  /><!--2 eventos más-->
 </p>
 <button (click)="getMarca()">Mostrar marca</button>
 <button (click)="addMarca()">Añadir marca</button>
-<p>{{mi_marca}}</p>
+<p>{{ mi_marca }}</p>

@@ -16,10 +16,12 @@ exports.AppModule = void 0;
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
+var app_routing_1 = require("./app.routing");
 var app_component_1 = require("./app.component");
 var videojuego_component_1 = require("./videojuego/videojuego.component");
 var zapatillas_component_1 = require("./zapatillas/zapatillas.component");
 var cursos_component_1 = require("./cursos/cursos.component");
+var home_component_1 = require("./home/home.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -29,13 +31,17 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 videojuego_component_1.VideojuegoComponent,
                 zapatillas_component_1.ZapatillasComponent,
-                cursos_component_1.CursosComponent
+                cursos_component_1.CursosComponent,
+                home_component_1.HomeComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                app_routing_1.routing
             ],
-            providers: [],
+            providers: [
+                app_routing_1.appRoutingProviders
+            ],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

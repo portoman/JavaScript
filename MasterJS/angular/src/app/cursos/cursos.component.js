@@ -9,9 +9,23 @@ exports.__esModule = true;
 exports.CursosComponent = void 0;
 var core_1 = require("@angular/core");
 var CursosComponent = /** @class */ (function () {
-    function CursosComponent() {
+    function CursosComponent(_route, _router) {
+        this._route = _route;
+        this._router = _router;
     }
     CursosComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._route.params.subscribe(function (params) {
+            _this.nombre = params.nombre;
+            _this.followers = +params.followers;
+            console.log(_this.nombre);
+            if (_this.nombre == 'ninguno') {
+                _this.redirigir();
+            }
+        });
+    };
+    CursosComponent.prototype.redirigir = function () {
+        this._router.navigate(['/zapatillas']);
     };
     CursosComponent = __decorate([
         core_1.Component({
