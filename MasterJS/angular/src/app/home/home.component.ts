@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public identificado: boolean=false;
+  constructor() { 
+    this.identificado=true;
+  }
 
   ngOnInit(): void {
   }
-
+setIdentificado(){
+  this.identificado=true;
+}
+unsetIdentificado(){
+  this.identificado=false;
+}
 }
