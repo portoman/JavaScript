@@ -1,0 +1,24 @@
+
+
+<!--Pipes-->
+{{fecha | date: 'dd/MM/YYYY'}} //
+{{fecha | date: 'dd/MM/YY'}}  //
+{{fecha | date: 'fullDate'| uppercase}} //
+{{'CAMBIADO A MINÚSCULA CON UNA PIPE' | lowercase}}
+<br/>
+{{4 | calculadora:2}}
+<hr/>
+
+<br/>
+<!--Peticiones Ajax-->
+<input type='text' [(ngModel)]="userId" (keyup.enter)="cargaUsuario()">
+<br/><br/>
+<div *ngIf="!user">
+    Cargando
+</div>
+
+
+<div *ngIf="user">
+    <img src="{{user.avatar}}" width="200px"/>
+    <h2>{{user.first_name +' '+user.last_name}}</h2>
+</div>
