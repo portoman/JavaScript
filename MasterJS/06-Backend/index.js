@@ -1,6 +1,6 @@
 'use strict'
-//Para arrancar el servidor: npm start (Así lo hemos configurado en package.json)
-//Para arrancar MongoDB hay que abrir el archivo mongod.exe
+//Para arrancar el servidor: npm start (Así lo hemos configurado en package.json) dentro de la carpeta del proyecto
+//Para arrancar MongoDB hay que abrir el archivo mongod.exe en : C:\Program Files\MongoDB\Server\5.0\bin
 
 
 //Conectándose a la base de datos
