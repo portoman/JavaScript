@@ -14,6 +14,7 @@ import { global } from '../../services/global';
 export class CreateComponent implements OnInit {
   public title: string;
   public project: Project;
+  public save_project: any;
   public status: string | undefined;
   public filesToUpload: Array<File> = [];
 
@@ -25,35 +26,25 @@ export class CreateComponent implements OnInit {
     this.project = new Project('', '', '', '', 2021, '', '');
   }
   ngOnInit() {}
-  /*
-  public _id: string,
-  public name: string,
-  public description: string,
-  public category: string,
-  public year: number,
-  public langs: string,
-  public image: string
-  */
   onSubmit(_form: any) {
     //Guardar los datos
     this._projectService.saveProject(this.project).subscribe(
-      (response) => {
+      response => {
         if (response.project) {
-          
           //Subir la imagen
           this._uploadService
             .makeFileRequest(
-              global.url + "upload-image/" + response.project._id,
+              global.url + 'upload-image/' + response.project._id,
               [],
               this.filesToUpload,
               'image'
             )
             .then((result: any) => {
+              this.save_project=result.project;
               this.status = 'success';
               console.log(result);
               _form.reset();
             });
-          
         } else {
           this.status = 'failed';
         }
@@ -64,6 +55,6 @@ export class CreateComponent implements OnInit {
     );
   }
   fileChangeEvent(fileInput: any) {
-    this.filesToUpload=<Array<File>>fileInput.target.files;
+    this.filesToUpload = <Array<File>>fileInput.target.files;
   }
 }
