@@ -43,7 +43,7 @@ export class CreateComponent implements OnInit {
           //Subir la imagen
           this._uploadService
             .makeFileRequest(
-              global.url + 'upload-image/' + response.project._id,
+              global.url + "upload-image/" + response.project._id,
               [],
               this.filesToUpload,
               'image'
@@ -64,6 +64,6 @@ export class CreateComponent implements OnInit {
     );
   }
   fileChangeEvent(fileInput: any) {
-    this.filesToUpload = <Array<File>>fileInput.target.files;
+    this.filesToUpload=<Array<File>>fileInput.target.files;
   }
 }
