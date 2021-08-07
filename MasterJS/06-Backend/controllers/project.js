@@ -99,7 +99,7 @@ var controller = {
             .status(404)
             .send({ message: "No existe el proyecto para actualizar." });
 
-        return res.satus(200).send({
+        return res.status(200).send({
           project: projectUpdated,
         });
       }
