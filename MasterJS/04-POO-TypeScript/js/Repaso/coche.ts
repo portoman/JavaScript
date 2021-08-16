@@ -1,5 +1,10 @@
-class Coche{
+interface CocheBase{
+    getModelo(): string;
+    getVelocidad():number;
+}
 
+
+class Coche implements CocheBase{
     //Atributos
     public color: string;
     public modelo: string;
@@ -23,14 +28,14 @@ class Coche{
         this.velocidad--;
     }
 
-    public getVelocidad(){
+    public getVelocidad():number{
         return this.velocidad;
     }
     public setVelocidad(velocidad: number){
         this.velocidad=velocidad;
     }
 
-    public getModelo(){
+    public getModelo():string{
         return this.modelo;
     }
     public setModelo(modelo: string){
